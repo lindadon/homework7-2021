@@ -37,7 +37,7 @@ document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Original location " + video.currentTime)
 	video.currentTime += 15;
 	console.log("New location " + video.currentTime)
-	if(video.currentTime >= video.duration - 15) {
+	if(video.currentTime > video.duration - 15) {
 		video.currentTime=0
 		video.play()
 		console.log("Going back to beginning")
