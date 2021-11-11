@@ -7,8 +7,6 @@ window.addEventListener("load", function() {
 
 });
 
-console.log("stressed out");
-
 var slider=document.querySelector("#slider");
 var output=document.querySelector("#volume")
 
@@ -33,6 +31,8 @@ video.playbackRate=video.playbackRate * 1.05;
 	console.log("Faster videos speed is " + video.playbackRate)
 	});
 
+//-6: Video not skipping ahead by the right amount and/or not restarting correctly.
+
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Original location " + video.currentTime)
 	if (video.currentTime < video.duration - 15) {
@@ -43,7 +43,6 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 	if(video.currentTime >= video.duration - 15) {
 		video.currentTime=0
-		video.play()
 		console.log("Going back to beginning")
 		console.log("New location " + video.currentTime)
 	}
